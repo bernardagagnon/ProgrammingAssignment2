@@ -22,18 +22,19 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
   
   ## make sur we are using a proper object
-  if (class(x) != "list" || class(x$getInverse) != "function") {
-    print ("x is not an object created by makeCacheMatrix")
+  if (class(x) != "list" 
+      || class(x$get)   != "function"
+      || class(x$get()) != "matrix") {
+    print ("x is not a well formed object created by makeCacheMatrix")
     return(NULL)
   }
   
-
   m <- x$getInverse()
   if(!is.null(m)) {
     return(m)
   }
   data <- x$get()
-  m <- solve(data)
+  m <- solve(data,...)
   x$setInverse(m)
   m
 }
