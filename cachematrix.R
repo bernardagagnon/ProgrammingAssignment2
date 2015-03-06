@@ -1,6 +1,7 @@
 ## Functions to invert and cache the result of square matrices
 
-## Create an object that will wrap the matrix
+## makeCacheMatrix
+## function that creates an object that will wrap the matrix
 ## args:     x: the square matrix to be inverted
 ## returns:  a CacheMatrix object
 
@@ -18,7 +19,7 @@ makeCacheMatrix <- function(x = matrix(c(1.0,0.0,0.0,1.0),c(2,2))) {
          getInverse = getInverse)
 }
 
-
+## cacheSolve
 ## function that inverts the matrix created by makeCacheMatrix and caches the result for subsequent calls
 ## args:     x:   the CacheMatrix returned by makeCacheMatrix
 ##           ...: additional arguments to be passed to solve
