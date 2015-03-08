@@ -5,7 +5,7 @@
 ## args:     x: the square matrix to be inverted
 ## returns:  a CacheMatrix object
 
-makeCacheMatrix <- function(x = matrix(c(1.0,0.0,0.0,1.0),c(2,2))) {
+makeCacheMatrix <- function(x = matrix(c(1.0,0.0,0.0,1.0),2,2)) {
     m <- NULL
     set <- function(y) {
         x <<- y
